@@ -3,9 +3,9 @@ import { ImageBackground, Text, View, StyleSheet, Dimensions, Image } from "reac
 import { Color } from "../data/theme";
 import { LinearGradient } from "expo-linear-gradient";
 
-const CARD_WIDTH = Dimensions.get('window').width * 0.32;
+const CARD_WIDTH = Dimensions.get('window').width * 0.35;
 
-const YugiohCard = ({ id, name, level, attribute, type, attack, defense, image_cropped}) => {
+const YugiohCard = ({ id, name, level, attribute, type, attack, defense, image_cropped, index }) => {
     return (
         <LinearGradient
         start={{x: 0, y: 0}}
@@ -26,10 +26,21 @@ const YugiohCard = ({ id, name, level, attribute, type, attack, defense, image_c
             <View style={{width: CARD_WIDTH}}>
                 <Text style={styles.nameText}>{name}</Text>
             </View>
-            <Text>{attribute}</Text>
-            <Text>{type}</Text>
-            <Text>ATK: {attack}</Text>
-            <Text>DFC: {defense}</Text>
+            <View style={styles.rightLeftContainer}>
+                <Text style={{color: Color.secondaryYellow}}>{attribute}</Text>
+                <View style={{flex: 1}}>
+                    <Text style={{textAlign: 'right', color: Color.secondaryYellow}}>{type}</Text>
+                </View>
+            </View>
+                <View style={styles.rightLeftContainer}>
+                    <Text style={{ color: Color.secondaryYellow }}>ATK:
+                        <Text style={{ color: Color.primaryRed }}> {attack}</Text>
+                    </Text><View style={{ flex: 1 }}>
+                    <Text style={{ textAlign: 'right', color: Color.secondaryYellow }}>DFC:
+                        <Text style={{ color: Color.primaryGreen }}> {defense}</Text>
+                    </Text>
+                </View>
+            </View> 
         </LinearGradient>
     )
 }
@@ -71,7 +82,12 @@ const styles = StyleSheet.create({
     nameText: {
         color: Color.primaryYellow,
         textAlign: 'center',
-
+        fontWeight: 'bold'
+    },
+    rightLeftContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
     }
 })
 

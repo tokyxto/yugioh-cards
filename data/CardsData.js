@@ -11,7 +11,8 @@ export const CardsData = [
         image_detailed: require('../assets/Cards_Images/QueenOfFate/QueenOfFate_Detailed.jpg'),
         image_cropped: require('../assets/Cards_Images/QueenOfFate/QueenOfFate_Cropped.jpg'),
         release_date: '2005-08-07',
-        favorite: false
+        favorite: false,
+        index: 0
     },
     
     {
@@ -26,7 +27,8 @@ export const CardsData = [
         image_detailed: require('../assets/Cards_Images/LegendaryFiend/LegendaryFiend_Detailed.jpg'),
         image_cropped: require('../assets/Cards_Images/LegendaryFiend/LegendaryFiend_Cropped.jpg'),
         release_date: '2002-01-25',
-        favorite: false
+        favorite: false,
+        index: 1
     },
 
     {
@@ -36,12 +38,13 @@ export const CardsData = [
         attribute: 'DIVINE',
         level: 12,
         type: 'Monster',
-        attack: '',
-        defense: '',
+        attack: 0,
+        defense: 0,
         image_detailed: require('../assets/Cards_Images/HolactieTheCreatorOfLight/Holactie_Detailed.jpg'),
         image_cropped: require('../assets/Cards_Images/HolactieTheCreatorOfLight/Holactie_Cropped.jpg'),
         release_date: '2011-12-10',
-        favorite: false
+        favorite: false,
+        index: 2
     },
 
     {
@@ -56,7 +59,8 @@ export const CardsData = [
         image_detailed: require('../assets/Cards_Images/NaturiaExterio/NaturioExterio_Detailed.jpg'),
         image_cropped: require('../assets/Cards_Images/NaturiaExterio/NaturioExterio_Cropped.jpg'),
         release_date: '2010-01-21',
-        favorite: false
+        favorite: false,
+        index: 3
     },
 
     {
@@ -71,7 +75,8 @@ export const CardsData = [
         image_detailed: require('../assets/Cards_Images/VulcanTheDivine/VulcanTheDivine_Detailed.jpg'),
         image_cropped: require('../assets/Cards_Images/VulcanTheDivine/VulcanTheDivine_Cropped.jpg'),
         release_date: '2012-12-22',
-        favorite: false
+        favorite: false,
+        index: 4
     },
 
     {
@@ -86,7 +91,8 @@ export const CardsData = [
         image_detailed: require('../assets/Cards_Images/NaelshaddollAriel/NaelshaddollAriel_Detailed.jpg'),
         image_cropped: require('../assets/Cards_Images/NaelshaddollAriel/NaelshaddollAriel_Cropped.jpg'),
         release_date: '2019-12-07',
-        favorite: false
+        favorite: false,
+        index: 5
     },
 
     {
@@ -101,6 +107,7 @@ export const CardsData = [
         image_detailed: require('../assets/Cards_Images/HandOfNephthys/HandOfNephthys_Detailed.jpg'),
         image_cropped: require('../assets/Cards_Images/HandOfNephthys/HandOfNephthys_Cropped.jpg'),
         release_date: '2004-11-25',
-        favorite: false
+        favorite: false,
+        index: 6
     }
 ]

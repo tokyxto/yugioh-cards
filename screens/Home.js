@@ -1,11 +1,11 @@
-import { ScrollView, StyleSheet, Text, View, Image, FlatList } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Image, FlatList, TouchableOpacity } from 'react-native';
 import { Color } from '../data/theme';
 import { Montserrat_600SemiBold, Montserrat_600SemiBold_Italic } from '@expo-google-fonts/montserrat';
 import { useFonts } from '@expo-google-fonts/montserrat/useFonts';
 import { CardsData } from '../data/CardsData';
 import YugiohCard from '../components/YugiohCard';
 
-export default function Home() {
+export default function Home({ navigation }) {
     const [fontsLoaded] = useFonts({
         Montserrat_600SemiBold,
         Montserrat_600SemiBold_Italic     
@@ -13,6 +13,7 @@ export default function Home() {
       if (!fontsLoaded) {
         return <Text>Loading...</Text>;
       }
+    
     return (
         <View style={styles.container}>
                 <View style={styles.imageContainer}>
@@ -29,13 +30,30 @@ export default function Home() {
                 </View>
                 <Text style={styles.listTitle}>Popular Card Pages</Text>
                 <FlatList
-                    data={CardsData}
+                    data={CardsData.slice(0, 5)}
                     horizontal
+                    keyExtractor={(item) => item.id.toString()}
                     showsHorizontalScrollIndicator={false}
                     contentContainerStyle={styles.listContainer}
                     renderItem={({ item }) => {
                         return (
-                            <YugiohCard
+                            <TouchableOpacity
+                             onPress={() => {
+                                navigation.navigate('Details', {
+                                    pressedItem: {
+                                        id: item.id,
+                                        name: item.name,
+                                        desc: item.description,
+                                        image: item.image_detailed,
+                                        level: item.level,
+                                        attribute: item.attribute,
+                                        type: item.type,
+                                        attack: item.attack,
+                                        defense: item.defense
+                                    }
+                                })
+                             }}>
+                                <YugiohCard
                                 id={item.id}
                                 name={item.name}
                                 image_cropped={item.image_cropped}
@@ -44,6 +62,8 @@ export default function Home() {
                                 type={item.type}
                                 attack={item.attack}
                                 defense={item.defense} />
+                            </TouchableOpacity>
+                            
                         )
                     }}
                     />

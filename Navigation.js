@@ -67,9 +67,7 @@ function TabComponents() {
 
 export default function Navigation() {
     return (
-        <NavigationContainer>
             <TabComponents />
-        </NavigationContainer>
     )
 }
 

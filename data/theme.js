@@ -6,5 +6,8 @@ export const Color = {
     textGray: '#DCDCDC',
     primaryBlackRGBA: 'rgba(12,15,20,0.5)',
     primaryGrey: '#252A32',
-    primaryBlack: '#0C0F14'
+    primaryBlack: '#0C0F14',
+    primaryRed: '#EF4040',
+    primaryGreen: '#A6FF96',
+    secondaryYellow: '#EFF396'
 }
