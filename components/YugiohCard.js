@@ -32,15 +32,6 @@ const YugiohCard = ({ id, name, level, attribute, type, attack, defense, image_c
                     <Text style={{textAlign: 'right', color: Color.secondaryYellow}}>{type}</Text>
                 </View>
             </View>
-                <View style={styles.rightLeftContainer}>
-                    <Text style={{ color: Color.secondaryYellow }}>ATK:
-                        <Text style={{ color: Color.primaryRed }}> {attack}</Text>
-                    </Text><View style={{ flex: 1 }}>
-                    <Text style={{ textAlign: 'right', color: Color.secondaryYellow }}>DFC:
-                        <Text style={{ color: Color.primaryGreen }}> {defense}</Text>
-                    </Text>
-                </View>
-            </View> 
         </LinearGradient>
     )
 }

@@ -1,28 +1,43 @@
-import { Text, View, StyleSheet, ImageBackground, Image, ScrollView } from "react-native";
+import { Text, View, StyleSheet, ImageBackground, Image, ScrollView, Dimensions } from "react-native";
 import BackButton from "../components/BackButton";
 import CardDetailedInfo from "../components/CardDetailedInfo";
 import { Color } from "../data/theme";
+import { useState } from "react";
+import { CardsData } from "../data/CardsData";
+import { useStore } from "../store/store";
 
+const tabBarHeight = Dimensions.get('window').height * 0.03
 
 export default function Details({ navigation, route }) {
-    const { pressedItem } = route.params;
+    const itemOfIndex = useStore((state) => state.CardList)[route.params.index]
+
+    const addToFavoriteList = useStore((state) => state.addToFavoriteList);
+    const deleteFromFavoriteList = useStore((state) => state.deleteFromFavoriteList);
+
+    const toggleFavorite = (favorite, id) => {
+        favorite ? deleteFromFavoriteList(id) : addToFavoriteList(id);
+    };
 
     return (
         <View style={styles.container}>
             <View style={styles.fixedTab}>
-                <BackButton name={pressedItem.name} />
+                <BackButton name={itemOfIndex.name} />
             </View>
             <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
                 <CardDetailedInfo
-                    name={pressedItem.name}
-                    image_detailed={pressedItem.image}
-                    description={pressedItem.desc}
-                    level={pressedItem.level}
-                    attribute={pressedItem.attribute}
-                    type={pressedItem.type}
-                    attack={pressedItem.attack}
-                    defense={pressedItem.defense}
-                    id={pressedItem.id} />
+                    name={itemOfIndex.name}
+                    image_detailed={itemOfIndex.image_detailed}
+                    description={itemOfIndex.description}
+                    level={itemOfIndex.level}
+                    attribute={itemOfIndex.attribute}
+                    type={itemOfIndex.type}
+                    attack={itemOfIndex.attack}
+                    defense={itemOfIndex.defense}
+                    id={itemOfIndex.id} 
+                    release_date={itemOfIndex.release_date}
+                    favorite={itemOfIndex.favorite}
+                    toggleFavorite={toggleFavorite}
+                     />
             </ScrollView>
         </View>
         
@@ -39,6 +54,6 @@ const styles = StyleSheet.create({
         padding: 10,
         alignItems: 'center',
         zIndex: 999,
-        marginTop: 12
+        top: tabBarHeight
     }
   });

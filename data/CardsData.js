@@ -1,6 +1,6 @@
 export const CardsData = [
     {
-        id: 'C1',
+        id: '1',
         name: 'Queen Of Fate',
         description: 'This card cannot be Special Summoned. This card must be Tribute Summoned by Tributing 3 Fairy-Type monsters on your side of the field. If this card attacks your opponents Life Points directly and makes them 0, the controller of this card wins the Match.',
         attribute: 'LIGHT',
@@ -16,7 +16,7 @@ export const CardsData = [
     },
     
     {
-        id: 'C2',
+        id: '2',
         name: 'Legendary Fiend',
         description: 'Once per turn, during your Standby Phase: This card gains 700 ATK.',
         attribute: 'DARK',
@@ -32,7 +32,7 @@ export const CardsData = [
     },
 
     {
-        id: 'C3',
+        id: '3',
         name: 'Holactie the Creator of Light',
         description: 'Cannot be Normal Summoned/Set. Must be Special Summoned (from your hand) by Tributing 3 monsters whose original names are "Slifer the Sky Dragon", "Obelisk the Tormentor", and "The Winged Dragon of Ra". This cards Special Summon cannot be negated. The player that Special Summons this card wins the Duel.',
         attribute: 'DIVINE',
@@ -48,7 +48,7 @@ export const CardsData = [
     },
 
     {
-        id: 'C4',
+        id: '4',
         name: 'Naturia Exterio',
         description: `A Fusion Summon of this card can only be conducted with the above Fusion Material Monsters. While this card is face-up on the field, you can negate the activation of a Spell/Trap Card, and destroy it, by removing from play 1 card from your Graveyard, then sending the top card of your Deck to the Graveyard.`,
         attribute: 'EARTH',
@@ -64,7 +64,7 @@ export const CardsData = [
     },
 
     {
-        id: 'C5',
+        id: '5',
         name: 'Vulcan the Divine',
         description: `If this card is Synchro Summoned: Target 1 face-up card you control and 1 face-up card your opponent controls; return those targets to the hand, but for the rest of this turn, you cannot activate cards, or the effects of cards, with the same name as those returned to the hand by this effect. You can only use this effect of "Vulcan the Divine" once per turn.`,
         attribute: 'FIRE',
@@ -80,7 +80,7 @@ export const CardsData = [
     },
 
     {
-        id: 'C6',
+        id: '6',
         name: 'Naelshaddoll Ariel',
         description: `FLIP: You can target 1 of your banished "Shaddoll" monsters; Special Summon it in face-up or face-down Defense Position. If this card is sent to the GY by a card effect: You can target up to 3 cards in the GY(s); banish them. You can only use 1 "Naelshaddoll Ariel" effect per turn, and only once that turn.`,
         attribute: 'WATER',
@@ -96,7 +96,7 @@ export const CardsData = [
     },
 
     {
-        id: 'C7',
+        id: '7',
         name: 'Hand of Nephthys',
         description: `You can Tribute this card and 1 other monster; Special Summon 1 "Sacred Phoenix of Nephthys" from your hand or Deck.`,
         attribute: 'WIND',

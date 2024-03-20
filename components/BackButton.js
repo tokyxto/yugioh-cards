@@ -1,8 +1,10 @@
-import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, Image, Dimensions } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { LinearGradient } from 'expo-linear-gradient';
 import { Color } from '../data/theme';
+
+const tabBarWidth = Dimensions.get('window').width * 0.95;
 
 const BackButton = ({ name }) => {
     const navigation = useNavigation();
@@ -32,7 +34,7 @@ const styles = StyleSheet.create({
         height: 40,
         flex: 1,
         justifyContent: 'center',
-        width: 373,
+        width: tabBarWidth,
         backgroundColor: 'rgba(255, 255, 255, 0.25)',
         borderRadius: 15,
         flexDirection: 'row',

@@ -30,27 +30,18 @@ export default function Home({ navigation }) {
                 </View>
                 <Text style={styles.listTitle}>Popular Card Pages</Text>
                 <FlatList
-                    data={CardsData.slice(0, 5)}
+                    data={CardsData}
                     horizontal
-                    keyExtractor={(item) => item.id.toString()}
+                    keyExtractor={item => item.id}
                     showsHorizontalScrollIndicator={false}
                     contentContainerStyle={styles.listContainer}
                     renderItem={({ item }) => {
                         return (
                             <TouchableOpacity
                              onPress={() => {
-                                navigation.navigate('Details', {
-                                    pressedItem: {
-                                        id: item.id,
-                                        name: item.name,
-                                        desc: item.description,
-                                        image: item.image_detailed,
-                                        level: item.level,
-                                        attribute: item.attribute,
-                                        type: item.type,
-                                        attack: item.attack,
-                                        defense: item.defense
-                                    }
+                                navigation.push('Details', {
+                                    index: item.index,
+                                    id: item.id,
                                 })
                              }}>
                                 <YugiohCard
